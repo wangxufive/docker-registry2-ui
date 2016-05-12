@@ -11,7 +11,9 @@ install: true
 #before_script:
 #  - rsyslogd &
 #  - sleep 1
-#script:
+script:
+  - go vet ./...
+  - go build ./...
 #  - make test
 #  - ./check-fmt.sh
 #  - make deadcode
