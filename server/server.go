@@ -28,7 +28,7 @@ func MainPageHandler(w http.ResponseWriter, r *http.Request) {
     return
   }
 
-  t, err := template.ParseFiles("view/index.html")
+  t, err := template.ParseFiles("static/view/index.html")
   if err != nil {
     log.Fatal("error parsing your template.")
   }
