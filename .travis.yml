@@ -8,11 +8,11 @@ go:
 env:
   global:
     - GOARCH=amd64
-    - GOPATH="${TRAVIS_BUILD_DIR}/vendor:$GOPATH"
 
 install: true
 
 before_script:
+  - export GOPATH=${TRAVIS_BUILD_DIR}/vendor:$GOPATH
   - go get github.com/mattn/goveralls
   - go get golang.org/x/tools/cmd/cover
 

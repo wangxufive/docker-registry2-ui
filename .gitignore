@@ -17,6 +17,10 @@
 *~.nib
 .merge_file*
 local.properties
+Godeps/*
+!Godeps/Godeps.json
+coverage.out
+count.out
 
 # nodejs
 /resources/node_modules
