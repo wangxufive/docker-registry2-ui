@@ -2,14 +2,14 @@
 .DS_Store
 
 /.idea
-.settings/
-bin/
-*.iml
+/bin
+/vendor
 *.iws
 *.ipr
 *.ids
 *.log
 .project
+.settings/
 .classpath
 *.tmp
 *.bak
@@ -17,17 +17,27 @@ bin/
 *~.nib
 .merge_file*
 local.properties
+Godeps/*
+!Godeps/Godeps.json
+coverage.out
+count.out
 
-# front
-/**/dist/**
-/**/node_modules/**
-/**/bower_components/**
+# nodejs
+/resources/node_modules
 
-# SASS
-.sass-cache/
+#augular2
+*.js
+*.js.map
+
+!**/*e2e-spec.js
+!karma*.js
+!protractor*.js
+!systemjs.config.js
+!typings/typings.d.ts
+!wallaby.js
 
 # External tool builders
-.externalToolBuilders/**
+.externalToolBuilders/**n
 
 # Locally stored "Eclipse launch configurations"
 *.launch
