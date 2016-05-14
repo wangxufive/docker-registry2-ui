@@ -12,17 +12,15 @@ env:
 
 install: true
 
-before_script:
-  - go get github.com/tools/godep
+#before_script:
+#  - go get github.com/tools/godep
 
 script:
-  - godep save ./...
   - go get golang.org/x/tools/cmd/cover
   - go get github.com/mattn/goveralls
-  - go test -v -covermode=count -coverprofile=coverage.out
 
 after_success:
-  - goveralls -coverprofile=coverage.out -service=travis-ci -repotoken DrSiX88MGP6WAf4WVN3Rz75wPwhmow9eF
+  - goveralls -service=travis-ci -repotoken DrSiX88MGP6WAf4WVN3Rz75wPwhmow9eF
 
 notifications:
   email:
