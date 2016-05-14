@@ -1,9 +1,9 @@
 {
-  "name": "angular2-quickstart",
+  "name": "docker-registry2-ui",
   "version": "1.0.0",
-  "description": "QuickStart package.json from the documentation, supplemented with testing support",
+  "description": "Angular2 HTML5 Docker Registry V2 Web UI",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+    "start": "tsc && concurrently \"tsc -w\" ",
     "e2e": "tsc && concurrently \"http-server\" \"protractor protractor.config.js\"",
     "lint": "tslint ./app/**/*.ts -t verbose",
     "lite": "lite-server",
@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
-    "lite-server": "^2.2.0",
     "typescript": "^1.8.10",
     "typings": "^0.8.1",
     "canonical-path": "0.0.2",

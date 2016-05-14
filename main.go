@@ -1,6 +1,6 @@
 package main
 
-// Golang HTML5 Docker Registry V2 UI Server
+// Golang HTML5 Docker Registry V2 Web UI Server
 //
 // author wangxufire
 
@@ -22,10 +22,12 @@ func main() {
   router.Use(middleware.CORS)
   router.Use(middleware.RequestId)
 
+  router.Static("/resources", "./resources")
+
   // Set html render options
   htmlRender := GinHtmlRender.New()
   htmlRender.Debug = gin.IsDebugging()
-  htmlRender.TemplatesDir = "app/"
+  htmlRender.TemplatesDir = "resources/"
 
   // Tell gin to use our html render
   router.HTMLRender = htmlRender.Create()

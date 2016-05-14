@@ -17,13 +17,12 @@ bin/
 .merge_file*
 local.properties
 
-# front
-/**/dist/**
-/**/node_modules/**
-/**/bower_components/**
+# nodejs
+/resources/node_modules
 
-# SASS
-.sass-cache/
+#augular2
+/resources/app/**/*.js
+/resources/app/**/*.map
 
 # External tool builders
 .externalToolBuilders/**
