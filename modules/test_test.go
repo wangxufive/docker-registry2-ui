@@ -7,5 +7,6 @@ import (
 )
 
 func TestBasicAuthFails(t *testing.T) {
-  t.Log(modules.Test())
+  t.Log("test")
+  modules.Test()
 }
