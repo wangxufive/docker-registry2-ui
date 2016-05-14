@@ -3,24 +3,26 @@ language: go
 sudo: false
 
 go:
-  - 1.6
   - tip
 
 env:
   global:
     - GOARCH=amd64
+    - GOPATH="${TRAVIS_BUILD_DIR}/vendor:$GOPATH"
 
 install: true
 
-#before_script:
-#  - go get github.com/tools/godep
+before_script:
+  - go get github.com/mattn/goveralls
+  - go get golang.org/x/tools/cmd/cover
 
 script:
-  - go get golang.org/x/tools/cmd/cover
-  - go get github.com/mattn/goveralls
+  - go vet
+  - go test -v -covermode=count -coverprofile=coverage.out
 
 after_success:
-  - goveralls -service=travis-ci -repotoken DrSiX88MGP6WAf4WVN3Rz75wPwhmow9eF
+  - goveralls -coverprofile=coverage.out -service=travis-ci -repotoken DrSiX88MGP6WAf4WVN3Rz75wPwhmow9eF
+
 
 notifications:
   email:
