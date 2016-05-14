@@ -14,9 +14,9 @@ install: true
 
 before_script:
   - go get github.com/tools/godep
-  - godep save ./...
 
 script:
+  - godep save ./...
   - go get golang.org/x/tools/cmd/cover
   - go get github.com/mattn/goveralls
   - go test -v -covermode=count -coverprofile=coverage.out
