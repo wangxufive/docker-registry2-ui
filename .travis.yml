@@ -12,17 +12,16 @@ env:
 install: true
 
 before_script:
-  - export GOPATH=${TRAVIS_BUILD_DIR}/vendor:$GOPATH
+  - go get -t -v ./...
   - go get github.com/mattn/goveralls
   - go get golang.org/x/tools/cmd/cover
 
 script:
-  - go vet
-  - go test -v -covermode=count -coverprofile=coverage.out
+  - go vet ./...
+  - go test -x -v -covermode=count -coverprofile=coverage.out
 
 after_success:
   - goveralls -coverprofile=coverage.out -service=travis-ci -repotoken DrSiX88MGP6WAf4WVN3Rz75wPwhmow9eF
-
 
 notifications:
   email:
