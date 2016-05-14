@@ -15,7 +15,6 @@ install: true
 #  - make test
 #  - ./check-fmt.sh
 #  - make deadcode
-#  - go get golang.org/x/net/http2/...
 #  - ./check-handlers.sh
 notifications:
   email:
