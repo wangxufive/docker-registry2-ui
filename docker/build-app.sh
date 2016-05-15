@@ -1,6 +1,7 @@
 #!/bin/bash
 
-set -ex
+#set -ex
+set -e
 
-cd /opt \
-&& make build
+cd /opt
+make build

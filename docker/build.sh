@@ -1,12 +1,17 @@
 #!/bin/sh
 
-set -ex
+#set -ex
+set -e
 
-/sbin/apk update \
-&& /sbin/apk add bash git \
-&& go get -u -v github.com/tools/godep \
-&& info(){ printf '\n--\n%s\n--\n\n' "$*"; }
+debug() { printf '\n--\n%s\n--\n\n' "$*"; }
 
-source ./build-node.sh
-source ./build-ui.sh
-source ./build-app.sh
+debug "==> Start building..."
+/sbin/apk update
+/sbin/apk add bash git
+
+debug "==> Starting build nodejs..." \
+&& exec ./docker/build-node.sh \
+&& debug "==> Starting build front..." \
+&& exec ./docker/build-ui.sh \
+&& debug "==> Starting build server..." \
+&& exec ./docker/build-app.sh

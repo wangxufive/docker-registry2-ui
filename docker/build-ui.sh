@@ -1,6 +1,8 @@
 #!/bin/bash
 
-set -ex
+#set -ex
+set -e
 
-cd /opt/resources \
-&& npm run tsc
+cd /opt/resources
+/usr/bin/npm install
+/usr/bin/npm run tsc

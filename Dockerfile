@@ -13,8 +13,10 @@ WORKDIR /opt
 # appliction resources
 COPY . .
 
-# runtimes setting
+# runtime setting
 ENV LANG en_US.UTF-8
+
+# building
 RUN ./docker/build.sh
 
 # open image port

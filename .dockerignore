@@ -19,3 +19,4 @@ LICENSE
 
 .git/
 .idea/
+/resources/node_modules
