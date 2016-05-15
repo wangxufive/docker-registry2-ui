@@ -9,16 +9,16 @@ env:
   global:
     - GOARCH=amd64
 
-install: true
+install:
+  - go get -t -v ./...
 
 before_script:
-  - go get -t -v ./...
-  - go get github.com/mattn/goveralls
   - go get golang.org/x/tools/cmd/cover
+  - go get github.com/mattn/goveralls
 
 script:
-  - go vet ./...
-  - go test -v ./modules/ -covermode=count -coverprofile=coverage.out
+  - go vet $(go list ./... | grep -v /vendor/)
+  - bash -c 'go list ./... | grep -v vendor | xargs -n1 go test -v -race -covermode=count -coverprofile=coverage.out -timeout=30s'
 
 after_success:
   - goveralls -coverprofile=coverage.out -service=travis-ci -repotoken DrSiX88MGP6WAf4WVN3Rz75wPwhmow9eF

@@ -1,6 +1,3 @@
-*~
-.DS_Store
-
 /.idea
 /bin
 /vendor
@@ -8,19 +5,18 @@
 *.ipr
 *.ids
 *.log
-.project
-.settings/
-.classpath
 *.tmp
 *.bak
 *.swp
 *~.nib
+.DS_Store
 .merge_file*
 local.properties
 Godeps/*
 !Godeps/Godeps.json
 coverage.out
 count.out
+docker-*
 
 # nodejs
 /resources/node_modules
@@ -33,20 +29,7 @@ count.out
 !karma*.js
 !protractor*.js
 !systemjs.config.js
-!typings/typings.d.ts
 !wallaby.js
-
-# External tool builders
-.externalToolBuilders/**n
-
-# Locally stored "Eclipse launch configurations"
-*.launch
-
-# CDT-specific
-.cproject
-
-# PDT-specific
-.buildpath
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*

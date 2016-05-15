@@ -10,6 +10,7 @@ import (
   "github.com/gin-gonic/gin"
   "github.com/wangxufire/docker-registry2-ui/middleware"
   "github.com/wangxufire/docker-registry2-ui/support"
+  "github.com/DeanThompson/ginpprof"
 )
 
 func main() {
@@ -35,6 +36,8 @@ func main() {
   router.GET("/registry", func(context *gin.Context) {
     context.HTML(http.StatusOK, "index", nil)
   })
+
+  ginpprof.Wrapper(router)
 
   router.Run(":8000")
 }
