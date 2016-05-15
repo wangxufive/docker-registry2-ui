@@ -6,7 +6,7 @@ set -e
 NODEJS_VERSION=6.1.0
 NPM_VERSION=3.8.6
 
-debug() { printf '\n--\n%s\n--\n\n' "$*"; }
+#debug() { printf '\n--\n%s\n--\n\n' "$*"; }
 
 debug "==> Installing dependencies..." \
 && /sbin/apk add --virtual build-deps \
@@ -25,8 +25,6 @@ debug "==> Installing dependencies..." \
 && /bin/echo "using upto $NPROC threads" \
 && ./configure --prefix=/usr --shared-openssl --shared-zlib \
 && debug "==> Building..." \
-&& make -j${NPROC} -C out mksnapshot \
-&& paxctl -c -m out/Release/mksnapshot \
 && make -j${NPROC} \
 && debug "==> Installing..." \
 && make install \
@@ -39,4 +37,5 @@ debug "==> Installing dependencies..." \
 && npm cache clean \
 && /bin/rm -rf ~/.node-gyp /tmp/* \
 && /bin/rm -rf nodejs \
-&& /bin/rm -rf /var/cache/apk/*
+&& /bin/rm -rf /var/cache/apk/* \
+&& debug "==> Building nodejs success..."
