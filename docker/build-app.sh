@@ -13,7 +13,7 @@ debug "==> Building..."
 /usr/local/go/bin/go install -v ./...
 
 debug "==> Copy bin to /opt..."
-/bin/cp -a ${GOPATH}/src/github.com/wangxufire/docker-registry2-ui/docker-registry2-ui /opt
+/bin/cp -a ${GOPATH}/bin/docker-registry2-ui /opt
 
 debug "==> Cleaning..."
 /bin/rm -rf ${GOPATH}
