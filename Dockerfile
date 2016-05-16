@@ -8,7 +8,7 @@ LABEL PROJECT="docker-registry2-ui" \
 MAINTAINER  "wangxufire" <wangxufire@gmail.com>
 
 # current workspace
-WORKDIR /optdocker-registry2-ui
+WORKDIR /opt
 
 # appliction resources
 ADD . docker-registry2-ui

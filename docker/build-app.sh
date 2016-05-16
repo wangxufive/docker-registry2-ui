@@ -4,10 +4,14 @@
 export PATH=${PATH}:${GOPATH}/bin
 
 # Init go environment to build Gogs
-mkdir -p ${GOPATH}/src/github.com/wangxufire/
-ln -s /opt/docker-registry2-ui/ ${GOPATH}/src/github.com/wangxufire/docker-registry2-ui
+/bin/mkdir -p ${GOPATH}/src/github.com/wangxufire/
+/bin/ln -s /opt/docker-registry2-ui/ ${GOPATH}/src/github.com/wangxufire/docker-registry2-ui
 cd ${GOPATH}/src/github.com/wangxufire/docker-registry2-ui
 
-make build
+/usr/bin/make build
+
+/bin/cp -a ${GOPATH}/src/github.com/wangxufire/docker-registry2-ui/docker-registry2-ui /opt
+
+/bin/rm -rf ${GOPATH}
 
 debug "==> Building server success..."
