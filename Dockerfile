@@ -1,5 +1,5 @@
 # base image
-FROM golang:latest
+FROM risingstack/alpine:3.3-v6.1.0-3.5.1
 
 LABEL PROJECT="docker-registry2-ui" \
       AUTHOR="wangxufire@gmail.com"
@@ -8,10 +8,10 @@ LABEL PROJECT="docker-registry2-ui" \
 MAINTAINER  "wangxufire" <wangxufire@gmail.com>
 
 # current workspace
-WORKDIR /go
+WORKDIR /opt
 
 # appliction resources
-ADD . src/app
+ADD . docker-registry2-ui
 
 # runtime setting
 ENV LANG en_US.UTF-8
