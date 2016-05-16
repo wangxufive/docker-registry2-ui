@@ -36,6 +36,5 @@ func main() {
     context.HTML(http.StatusOK, "index", nil)
   })
 
-  1
   router.Run(":8000")
 }
