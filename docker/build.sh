@@ -10,10 +10,10 @@ debug "==> Start building..."
 debug "==> Starting install nodejs..."
 source /opt/docker/build-node.sh
 
-debug "==> Starting build front..."
-source /opt/docker/build-ui.sh
-
 debug "==> Starting build server..."
 source /opt/docker/build-app.sh
+
+debug "==> Starting build front..."
+source /opt/docker/build-ui.sh
 
 debug "==> Building success..."
