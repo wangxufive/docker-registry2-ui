@@ -17,7 +17,7 @@ ADD . docker-registry2-ui
 ENV LANG en_US.UTF-8
 
 # building
-RUN docker/build.sh
+RUN docker-registry2-ui/docker/build.sh
 
 # open image port
 EXPOSE 8000
