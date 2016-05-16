@@ -17,7 +17,7 @@ COPY . .
 ENV LANG en_US.UTF-8
 
 # building
-RUN ./docker/build.sh
+RUN docker/build.sh
 
 # open image port
 EXPOSE 8000

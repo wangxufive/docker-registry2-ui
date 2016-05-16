@@ -7,12 +7,14 @@ debug() { printf '\n--\n%s\n--\n\n' "$*"; }
 
 debug "==> Start building..."
 /sbin/apk update
-/sbin/apk add bash git
+/sbin/apk --no-cache add bash
 
 debug "==> Starting build nodejs..." \
-&& source ./docker/build-node.sh \
+&& source /opt/docker/build-node.sh \
+&& echo `pwd` \
 && debug "==> Starting build front..." \
-&& source ./docker/build-ui.sh \
+&& source /opt/docker/build-ui.sh \
+&& echo `pwd` \
 && debug "==> Starting build server..." \
-&& source ./docker/build-app.sh \
+&& source /opt/docker/build-app.sh \
 && debug "==> Building success..."

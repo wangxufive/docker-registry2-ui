@@ -1,9 +1,7 @@
 #!/bin/bash
 
-#set -ex
-set -e
-
-cd /opt
+/sbin/apk --no-cache add git make
 make build
+/sbin/apk del git make
 
 debug "==> Building server success..."
