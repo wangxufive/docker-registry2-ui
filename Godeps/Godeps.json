@@ -7,6 +7,10 @@
 	],
 	"Deps": [
 		{
+			"ImportPath": "github.com/DeanThompson/ginpprof",
+			"Rev": "18e555cdf1a9504a2fb2a42c112c7e4a79fc3853"
+		},
+		{
 			"ImportPath": "github.com/gin-gonic/gin",
 			"Comment": "v1.0rc1-266-g542be2f",
 			"Rev": "542be2fe77724f800fcab7eb6c01a4e597fb8506"
