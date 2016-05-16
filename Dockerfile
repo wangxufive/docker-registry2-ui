@@ -1,5 +1,5 @@
 # base image
-FROM risingstack/alpine:3.3-v6.1.0-3.5.1
+FROM golang:latest
 
 LABEL PROJECT="docker-registry2-ui" \
       AUTHOR="wangxufire@gmail.com"
@@ -8,7 +8,7 @@ LABEL PROJECT="docker-registry2-ui" \
 MAINTAINER  "wangxufire" <wangxufire@gmail.com>
 
 # current workspace
-WORKDIR /opt
+WORKDIR /optdocker-registry2-ui
 
 # appliction resources
 ADD . docker-registry2-ui
