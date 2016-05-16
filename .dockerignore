@@ -19,4 +19,5 @@ LICENSE
 
 .git/
 .idea/
+/vendor
 /resources/node_modules
