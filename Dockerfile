@@ -8,10 +8,10 @@ LABEL PROJECT="docker-registry2-ui" \
 MAINTAINER  "wangxufire" <wangxufire@gmail.com>
 
 # current workspace
-WORKDIR /opt
+WORKDIR /go
 
 # appliction resources
-COPY . .
+ADD . src/app
 
 # runtime setting
 ENV LANG en_US.UTF-8
