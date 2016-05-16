@@ -23,4 +23,4 @@ RUN docker-registry2-ui/docker/build.sh
 EXPOSE 8000
 
 # exec command
-CMD ["./docker-registry2-ui"]
+CMD ["./start"]
