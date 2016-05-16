@@ -1,5 +1,5 @@
 # base image
-FROM golang:alpine
+FROM golang:latest
 
 LABEL PROJECT="docker-registry2-ui" \
       AUTHOR="wangxufire@gmail.com"
